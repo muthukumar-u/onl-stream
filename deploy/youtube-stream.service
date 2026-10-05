@@ -1,0 +1,25 @@
+[Unit]
+Description=Continuous YouTube video loop
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=media-stream
+Group=media-stream
+WorkingDirectory=/opt/youtube-stream
+ExecStart=/usr/bin/python3 /opt/youtube-stream/stream.py
+Restart=always
+RestartSec=15
+TimeoutStopSec=10
+KillMode=control-group
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictSUIDSGID=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

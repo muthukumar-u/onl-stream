@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+stream.env
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.mp4
+*.mov
+*.flv
+*.log
+.venv/
+__pycache__/
+.DS_Store
